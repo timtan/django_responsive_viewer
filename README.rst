@@ -9,8 +9,18 @@ You Can View your page in different resolution at the same page. it is beneficia
 
 
 
+Installation
+------------
+
+
+.. code-block:: bash
+
+    pip install django-responsive-viewer
+
+
 Quick start
 -----------
+
 
 1. Add "django_responsive_viewer" in your INSTALLED_APP
 
