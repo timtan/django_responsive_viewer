@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       .TargetPage{
+           float: left;
+           margin-left: 20px;
+           margin-top: 20px;
+           border: 1px solid rgba(0,0,0,0.3);
+       }
+       .TargetPage::first-child{
+           clear: left;
+       }
+    </style>
+</head>
+
+<body>
+
+
+    <form action="" method="GET">
+        <select data-select style="float: left" name="select-url">
+            {% for url in url_list %}
+                <option value="{{ url }}"> {{ url }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit"/>
+    </form>
+
+    <a href="{{ first_url| safe}}"> {{ first_url| safe }}</a>
+
+
+    <div style="float: left">
+
+        {% for spec in layouts %}
+            <iframe class='TargetPage'
+                    data-target src="{{ first_url| safe }}"
+                    width='{{ spec.0 }}'
+                    height="{{ spec.1 }}"
+                    frameborder="0" >
+            </iframe>
+        {% endfor %}
+
+    </div>
+
+
+
+
+
+        <script src="{% static 'js/jquery-1.11.3.js' %}"></script>
+
+
+
+        <script>
+            $(function(){
+                var $select= $('[data-select]');
+                $select.change(function(e){
+                    console.log('change');
+                    $('form').submit();
+                });
+            });
+        </script>
+
+
+</body>
+</html>
