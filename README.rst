@@ -5,6 +5,10 @@ django-responsive-viewer
 
 You Can View your page in different resolution at the same page. it is beneficial for f2e developer
 
+.. image:: screenshot.png
+
+
+
 Quick start
 -----------
 
